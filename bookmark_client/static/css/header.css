@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#cheader{
+    width: 100%;
+    height: 45px;
+    border-top: solid black 3px;
+    margin: 0 auto;
+    padding: 15px;
+}
+#cheader>#clogo{
+    /* border: solid red 1px; */
+    width: 550px;
+    height: 45px;
+    text-align: right;
+    line-height: 45px;
+    font-size: 36px;
+    color: black;
+    float: left;
+}
+#cheader>#csearch{
+    /* border: solid red 1px; */
+    float:left;
+    width: 320px;
+    padding-top: 7px;
+}
+#cheader>#csearch>input{
+    outline-style: none;
+    width: 196px;
+    height: 26px;
+    border: solid #8d2433 1px;
+    margin-left: 30px;
+    font-size: 14px;
+    padding: 2px;
+}
+#cheader>#csearch>button{
+    outline-style: none;
+    width: 60px;
+    height: 30px;
+    background-color: #8d2433;
+    border: solid #8d2433 1px;
+    margin-left: 5px;
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+#cheader>#csearch>button:hover{
+    background-color: black;
+}
+#cheader>#cadd{
+    width: 25px;
+    height: 25px;
+    float: left;
+    border-radius: 50px;
+    border: solid black 2px;
+    color: #8d2433;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 7px;
+    cursor: pointer;
+}
+#cheader>#cadd:hover{
+    color: #ff0000;
+}
+#cheader>#cuser{
+    float: left;
+    width: 205px;
+    /* border: solid red 1px; */
+    cursor: pointer;
+    padding-left: 30px;
+}
+#cheader>#cuser>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: solid black 1px;
+}
+#cheader>#cuser>#cname{
+    float: right;
+    width: 150px;
+    height: 30px;
+    font-size: 22px;
+    color: black;
+    text-align: left;
+    line-height: 30px;
+    /* border: solid black 1px; */
+    margin-top: 5px;
+}
+#cheader>#cuser>#cname:hover{
+    color: #8d2433;
+}

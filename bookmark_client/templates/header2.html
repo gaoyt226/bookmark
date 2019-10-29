@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拾集|头部</title>
+    <script src="static/js/jquery_sources.js"></script>
+    <!-- 1.引入样式 -->
+    <link rel="stylesheet" href="static/element_ui/style.css">
+    <!-- 2.引入vue -->
+    <script src="static/element_ui/vue.js"></script>
+    <!-- 3.引入组件库 -->
+    <script src="static/element_ui/min.js"></script>
+
+    <link rel="stylesheet" href="static/css/header2.css">
+    <script src="static/js/common.js"></script>
+</head>
+
+<body>
+    <div id="line"></div>
+    <div id="app-header">
+        <el-row :gutter="20">
+            <el-col :span="4">
+                <div class="grid-content bg-purple">拾集</div>
+            </el-col>
+            <el-col :span="14">
+                <div class="grid-content bg-purple">
+                    <el-input placeholder="搜索" v-model="ser_input">
+                    </el-input>
+                    <!-- 嵌套表单的对话框 -->
+                    <el-button type="text" @click="dialogFormVisible = true">
+                        <img src="../static/images/plus.png" alt="" id="plus" onclick="clearComponent()">
+                    </el-button>
+                    <el-dialog title="" :visible.sync="dialogFormVisible">
+                        <el-form :model="form" @submit.native.prevent>
+                            <el-input v-model="form.name" autocomplete="off" class="diaipt" placeholder="请输入网址"
+                                id="getipt"></el-input>
+                            <el-button type="primary" plain class="diabtn" onclick="getLinkDetails()">确定</el-button>
+                        </el-form>
+                        <el-divider></el-divider>
+                        <el-form ref="form" :model="form" id="details">
+                            <el-input placeholder="标题" v-model="input" id="stitle"></el-input>
+                            <el-input type="textarea" :rows="3" placeholder="描述" v-model="textarea1" id="sdescription">
+                            </el-input>
+                            <div id="tags">
+                                <el-select v-model="tag_value" multiple filterable allow-create default-first-option
+                                    placeholder="请选择文章标签">
+                                    <el-option v-for="item in tag_options" :key="item.tag_value" :label="item.tag_label"
+                                        :value="item.tag_value">
+                                    </el-option>
+                                </el-select>
+                            </div>
+                            <!-- 选择器 -->
+                            <div id="xiala">
+                                <el-select v-model="sel_value" placeholder="收藏集">
+                                    <el-option-group v-for="group in sel_options" :key="group.sel_label" :label="group.sel_label">
+                                        <el-option v-for="item in group.sel_options" :key="item.sel_value" :label="item.sel_label"
+                                            :value="item.sel_value">
+                                        </el-option>
+                                    </el-option-group>
+                                </el-select>
+                            </div>
+                        </el-form>
+                        <div slot="footer" class="dialog-footer">
+                            <el-button @click="dialogFormVisible = false">取 消</el-button>
+                            <el-button type="primary" @click="dialogFormVisible = false" 
+                            id="addbm">添加书签</el-button>
+                        </div>
+                    </el-dialog>
+                </div>
+            </el-col>
+            <el-col :span="6">
+                <div class="grid-content bg-purple">
+                    <img src="../static/images/nonlogin.jpg" alt="" id="avatar">
+                    <div id="user">aliajdslajdlsakjl</div>
+                </div>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="8"><div class="grid-content bg-purple">首页</div></el-col>
+            <el-col :span="8"><div class="grid-content bg-purple-light">收藏集</div></el-col>
+            <el-col :span="8"><div class="grid-content bg-purple">标签</div></el-col>
+        </el-row>
+    </div>
+</body>
+
+</html>

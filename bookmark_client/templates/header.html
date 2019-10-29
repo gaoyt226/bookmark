@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通用头部</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <!-- element-ui -->
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../element_ui/style.css">
+    <!-- 引入vue -->
+    <script src="../element_ui/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="../element_ui/min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="cheader">
+        <div id="clogo">拾集</div>
+        <div id="csearch">
+            <input type="text">
+            <button>搜索</button>
+        </div>
+        <div id="app">
+            <el-button id="cadd" type="text" @click="dialogVisible = true">+</el-button>
+            <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+                <span>这是一段信息</span>
+                <span slot="footer" class="dialog-footer">
+                    <el-button @click="dialogVisible = false">取 消</el-button>
+                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                </span>
+            </el-dialog>
+        </div>
+        <!-- <div id="cadd">+</div> -->
+        <div id="cuser">
+            <img src="../static/images/nonlogin.jpg" alt="">
+            <div id="cname">ali</div>
+        </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    dialogVisible: false
+                };
+            },
+            methods: {
+                handleClose(done) {
+                    this.$confirm('确认关闭？')
+                        .then(_ => {
+                            done();
+                        })
+                        .catch(_ => { });
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

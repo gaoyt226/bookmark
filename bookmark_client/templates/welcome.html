@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>拾集</title>
+    <link rel="stylesheet" href="/static/css/welcome.css">
+    <script src="/static/js/jquery_sources.js"></script>
+    <script src="/static/js/welcome.js"></script>
+</head>
+
+<body>
+    <div id="header">拾集</div>
+    <div id="main">
+        <div id="left">
+            <div id="title">拾集</div>
+            <div id="wd">小小网页 发现大大世界</div>
+            <div id="word">简单、方便地整理您的网址</div>
+            <div id="start" onclick="wstart()">开始吧</div>
+        </div>
+        <div id="right">
+            <div id="top">
+                <div id="log" onclick="logc()">登录</div>
+                <div id="reg" onclick="regc()">注册</div>
+            </div>
+            <div id="bottom">
+                <div id="logshow">
+                    <div>
+                        <label for="" class="lb">用户名</label>
+                        <input type="text" class="ip" placeholder="username" id="unl">
+                    </div>
+                    <div>
+                        <label for="" class="lb">密码</label>
+                        <input type="password" class="ip" placeholder="password" id="psl">
+                    </div>
+                    <div class="btn" onclick="login()">登录</div>
+                </div>
+                <div id="regshow">
+                    <div>
+                        <label for="" class="lb">用户名</label>
+                        <input type="text" class="ip" 
+                               placeholder="username" name="username" id="un">
+                    </div>
+                    <div>
+                        <label for="" class="lb">邮箱</label>
+                        <input type="text" class="ip" placeholder="email" name="email" id="em">
+                    </div>
+                    <div>
+                        <label for="" class="lb">密码</label>
+                        <input type="password" class="ip" placeholder="password" name="password" id="ps">
+                    </div>
+                    <div class="btn" onclick="register()">注册</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
